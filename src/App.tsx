@@ -1,26 +1,20 @@
-import { useState } from 'react';
-import './App.css';
-import Post from './components/Post';
-import Sidebar from './components/Sidebar';
+import { useState } from "react";
+import "./App.css";
+import Post from "./components/Post";
+import Card from "./components/Card";
 
 function App() {
-  const [post, setPost] = useState({
-    title: 'Título maneiro',
-    content: 'Lorem Ipsum dolor sit ament'
-  })
-
-  // setTimeout(() => {
-  //   setPost({
-  //     title: 'Título maneiro22222',
-  //     content: "Lorem Ipsum dolor sit amet"
-  //   })
-  // }, 5000)
+  const [post] = useState({
+    title: "Título maneiro",
+    content: "Lorem Ipsum dolor sit ament",
+  });
 
   return (
     <div className="App">
       <header className="App-header">
-        <Sidebar post={post}/>
-        <Post post={post} totalComments={12}/>
+        <Card title="Card">
+          <Post post={post} totalComments={12} />
+        </Card>
       </header>
     </div>
   );
